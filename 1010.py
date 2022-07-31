@@ -1,5 +1,6 @@
 #1010
 
+
 import math
 
 T = int(input());
