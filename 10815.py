@@ -26,3 +26,24 @@ for i in M_list:
         print("1", end=" ")
     else:
         print("0", end=" ")
+    
+________________________________________________________________________________________________________________    
+#bisect 라이브러리 사용
+#bisect_left(a,x): 정렬된 순서를 유지하면서 리스트 a 에서 데이터 x를 삽입할 가장 왼쪽 인덱스를 찾는 메서드
+#bisect_rigth(a,x): 정렬된 순서를 유지하면서 리스트  a 에서 데이터 x를 삽입할 가장 오론쪽 인덱스를 찾는 메서드
+
+from bisect import bisect_right, bisect_left
+
+N = int(input(""))
+N_list = list(map(int, input().split()))
+M = int(input(""))
+M_list = list(map(int, input().split()))
+N_list.sort()
+
+for i in M_list:
+    left = bisect_left(N_list, i)
+    right = bisect_right(N_list, i)
+    if left == right:
+        print("0", end = " ")
+    else:
+        print("1", end = " ")
